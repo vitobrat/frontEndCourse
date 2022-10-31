@@ -1,0 +1,13 @@
+.text{
+  font-size: 100px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+}
+.textRed{
+  background-color: red;
+  border-radius:10px;
+}
+.textGreen{
+  background-color: green;
+  border-radius:10px;
+}

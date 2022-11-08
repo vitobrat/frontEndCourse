@@ -3,18 +3,18 @@ import { Button } from "../components/Button/Button";
 import  { List } from "../components/List/List"
 
 export default function IndexPage(){
-  let [content, setContent] = useState(null);
-  let [valuePicture, setValuePicture] = useState("");
-  let [valueTitle, setValueTitle] = useState("");
-  let [page, setPage] = useState(0);
+  const [content, setContent] = useState(null);
+  const [valuePicture, setValuePicture] = useState("");
+  const [valueTitle, setValueTitle] = useState("");
+  const [page, setPage] = useState(0);
 
   function handleClick(e){
     e.preventDefault();
     if (!valuePicture || !valueTitle) return;
     console.log(valueTitle);
     setContent(lastState => [{title : valueTitle, url : valuePicture}, ...(lastState || [])]);
-    setValuePicture="";
-    setValueTitle="";
+    setValuePicture("");
+    setValueTitle("");
   }
   
   useEffect(() => {

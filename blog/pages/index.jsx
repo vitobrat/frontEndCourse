@@ -10,7 +10,7 @@ export default function IndexPage(){
 
   function handleClick(e){
     e.preventDefault();
-    if (!valuePicture ) return;
+    if (!valuePicture || !valueTitle) return;
     console.log(valueTitle);
     setContent(lastState => [{title : valueTitle, url : valuePicture}, ...(lastState || [])]);
     setValuePicture="";
@@ -24,8 +24,8 @@ export default function IndexPage(){
   return(
     <div>
       <form onSubmit={handleClick}>
-        <input type="text" value = {valuePicture} onChange = {e => setValuePicture(e.target.valuePicture)}/>
-        <p><input type="text" value = {valueTitle} onChange = {e => setValueTitle(e.target.valueTitle)}/></p>
+        <input type="text" value = {valuePicture} onChange = {e => setValuePicture(e.target.value)}/>
+        <p><input type="text" value = {valueTitle} onChange = {e => setValueTitle(e.target.value)}/></p>
         <p><Button type="submit">add Picture</Button></p>
         <Button type="button" onClick={() => setPage(p => p-1>=0? p-1 : p)}>previos-{page}</Button>
         <Button type="button" onClick={() => setPage(p => p+1)}>next-{page}</Button>

@@ -10,6 +10,7 @@ const BlogItem = ({data}) => {
       <title>Blog page</title>
       </Head>
       <img src={data.url}/>
+      <p className='description'>{data.title}</p>
     </div>
   )
 }

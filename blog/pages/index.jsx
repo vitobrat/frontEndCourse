@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import { Button } from "../components/Button/Button";
 import  { List } from "../components/List/List"
 import Image from "next/image";
-import Link from "next/link";
 import Head  from "next/head";
 
 export default function IndexPage( {data} ){
@@ -30,7 +29,7 @@ export default function IndexPage( {data} ){
       <form onSubmit={handleClick}>
         <input type="text" value = {valuePicture} onChange = {e => setValuePicture(e.target.value)}/>
         <p><input type="text" value = {valueTitle} onChange = {e => setValueTitle(e.target.value)}/></p>
-        <p><Button type="submit">add Picture</Button></p>
+        <Button type="submit">add Picture</Button>
         <Button type="button" onClick={() => setPage(p => p-1>=0? p-1 : p)}>previos-{page}</Button>
         <Button type="button" onClick={() => setPage(p => p+1)}>next-{page}</Button>
       </form>

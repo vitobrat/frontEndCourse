@@ -1,13 +1,20 @@
+:root{
+  --main-color : #1f2235;
+  --background-color : #23263a;
+  --text-color : #ffffff;
+  --secondary-color : #f64754;
+  --width : 1380px;
+}
+
+html{
+  font-size: 18px;
+}
+
 body{
   background-color: #fff;
   font-family: 'Bebas Neue', cursive;
-}
-
-img{
-  padding: 10px 5px;
-  border-radius: 20%;
-}
-
-.description{
-  padding: 0px 150px;
+  color : var(--text-color);
+  background: var(--main-color);
+  max-width: var(--width);
+  margin:auto; 
 }

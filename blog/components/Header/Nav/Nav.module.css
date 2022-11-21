@@ -4,6 +4,7 @@
   width: calc(100% - 70px);
   margin: auto;
   align-items: center;
+  padding: 15px;
 }
 
 .img__logo{

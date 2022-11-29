@@ -3,11 +3,10 @@ import { Layout } from "../components/Layout/Layout";
 import { Nav } from '../components/Header/Nav/Nav';
 import css from "./index.module.css"
 import { Button } from '../components/UI/Button/Button';
-import { cardsMock } from '../constants/mock';
 import { Card } from '../components/Cards/Cards';
 
 
-const IndexPage = () => {
+const IndexPage = ({data}) => {
   return (
     <Layout title="Main">
       <header>
@@ -19,13 +18,36 @@ const IndexPage = () => {
           <Button>Let's read</Button>
         </div>
         <section className={css.cards}>
-          {cardsMock.map(c => (
-            <Card key={c.id} {...c}/>
-          ))}
+          {data.map((el, i) => (
+          <Card key={i} id={i} {...el}/>))}
         </section>
       </main>
     </Layout>
   )
+}
+
+export async function getStaticProps(context){
+  const result = await fetch("https://leti.kzteams.ru/api/blog/page").then(res => {
+    if (res.ok) return(res.json());
+    else throw Error(res.statusText);
+  }).
+  catch( err => console.error(err));
+
+  if (!Array.isArray(result)){
+    return{
+      props :{
+        data : [],
+      },
+      revalidate : 100,
+    };
+  }
+
+  return{
+    props :{
+      data : [...result],
+    },
+    revalidate : 100,
+  };
 }
 
 export default IndexPage;

@@ -12,7 +12,7 @@ html{
 
 body{
   background-color: #fff;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Roboto', sans-serif;
   color : var(--text-color);
   background: var(--main-color);
   max-width: var(--width);

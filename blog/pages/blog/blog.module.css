@@ -1,0 +1,25 @@
+.article{
+  font-size: 25px;
+  line-height: 1.5;
+}
+.article img{
+  max-width: 100%;
+  object-fit: contain;
+}
+.article pre{
+  white-space: pre-wrap;
+}
+
+.article a{
+  color: rgb(#001ede);
+}
+
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap : 30px;
+}
+
+.wrapper{
+  padding: 10px;
+}
